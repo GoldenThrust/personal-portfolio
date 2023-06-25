@@ -1,0 +1,51 @@
+@layer reset, defaults, patterns, components, utilities, overrides;
+
+@layer reset {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+}
+
+@layer defaults {
+    :root{
+        --link: #FD62A3;
+        --visited-link: #fd62db;
+        --focused-link: #ff3662;
+    }
+    body {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    p {
+        line-height: 1.4;
+    }
+    
+    a {
+        outline: none;
+    }
+    
+    a:link {
+        color: var(--link);
+    }
+    
+    a:visited {
+        color: var(--visited-link);
+    }
+    
+    a:focus {
+        text-decoration: none;
+        background: var(--visited-link);;
+    }
+    
+    a:hover {
+        text-decoration: none;
+        background: var(--visited-link);;
+    }
+    
+    a:active {
+        background: #9000ff;
+        color: var(--visited-link);;
+    }    
+}
