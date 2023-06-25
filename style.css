@@ -1,4 +1,9 @@
-@layer reset, defaults, patterns, components, utilities, overrides;
+@layer reset,
+defaults,
+patterns,
+components,
+utilities,
+overrides;
 
 @layer reset {
     * {
@@ -9,43 +14,71 @@
 }
 
 @layer defaults {
-    :root{
+    :root {
         --link: #FD62A3;
         --visited-link: #fd62db;
         --focused-link: #ff3662;
+        --background: #181616;
     }
+
+    html {
+        position: fixed;
+        height: 100%;
+        overflow: hidden;
+        scroll-behavior: smooth;
+        color-scheme: dark light;
+    }
+
     body {
+        margin: 0;
+        width: 100vw;
+        height: 100%;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        background-color: var(--background);
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     }
-    
+
+    canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* background-color: #000000; */
+    }
+
     p {
         line-height: 1.4;
     }
-    
+
     a {
         outline: none;
     }
-    
+
     a:link {
         color: var(--link);
     }
-    
+
     a:visited {
         color: var(--visited-link);
     }
-    
+
     a:focus {
         text-decoration: none;
-        background: var(--visited-link);;
+        background: var(--visited-link);
+        ;
     }
-    
+
     a:hover {
         text-decoration: none;
-        background: var(--visited-link);;
+        background: var(--visited-link);
+        ;
     }
-    
+
     a:active {
         background: #9000ff;
-        color: var(--visited-link);;
-    }    
+        color: var(--visited-link);
+        ;
+    }
 }
