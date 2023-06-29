@@ -16,9 +16,10 @@ overrides;
 @layer defaults {
     :root {
         --link: #FD62A3;
-        --visited-link: #fd62db;
-        --focused-link: #ff3662;
+        --visited-link: #9b0707;
+        --focused-link: #410739;
         --background: #181616;
+        --text-color: #9D9D9D;
     }
 
     html {
@@ -37,6 +38,7 @@ overrides;
         -webkit-overflow-scrolling: touch;
         background-color: var(--background);
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: white;
     }
 
     canvas {
@@ -54,6 +56,7 @@ overrides;
 
     a {
         outline: none;
+        text-decoration: none;
     }
 
     a:link {
@@ -61,24 +64,123 @@ overrides;
     }
 
     a:visited {
-        color: var(--visited-link);
+        color: var(--link);
     }
 
     a:focus {
-        text-decoration: none;
-        background: var(--visited-link);
-        ;
+        color: var(--focused-link);
     }
 
     a:hover {
-        text-decoration: none;
-        background: var(--visited-link);
-        ;
+        color: var(--focused-link);
     }
 
     a:active {
-        background: #9000ff;
-        color: var(--visited-link);
-        ;
+        color: var(--focused-link);
     }
+
+    ul {
+        list-style: none;
+        text-decoration: none;
+    }
+
+    li {
+        display: inline;
+        list-style: none;
+    }
+}
+
+@layer components {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(110, 81, 171, 0.12) 0%, rgba(255, 120, 242, 0.06) 100%);
+        backdrop-filter: blur(15px);
+        height: 75px;
+        color: aliceblue;
+    }
+
+    .portlogo_container {
+        display: flex;
+        /* margin-left: 0px; */
+    }
+
+    .portlogo_container .portlogo {
+        display: block;
+        width: 50px;
+        height: 50px;
+    }
+
+    .portlogo_container .portlogo div {
+        width: 15px;
+        aspect-ratio: 1;
+        background-color: var(--color);
+        transform: translate(var(--x), var(--y));
+        border-radius: 50%;
+    }
+
+    .portname {
+        font-size: larger;
+        font-family: Times New Roman;
+        font-weight: 700;
+    }
+
+    .portname .seg {
+        color: #FFF;
+    }
+
+    .portname .seg2 {
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent;
+        background: linear-gradient(120deg, #DB00FF 20%, #FF00FF 100%);
+        background-clip: text;
+        color: transparent;
+        text-fill-color: transparent;
+    }
+
+    .navigator li {
+        display: flex;
+        justify-content: center;
+        margin: 50% 0;
+    }
+
+    .navigator {
+        position: fixed;
+        top: 0;
+        left: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: larger;
+        font-weight: bolder;
+        font-family: 'Courier New', Courier, monospace;
+        height: 100vh;
+        background-color: #0c040a;
+    }
+}
+
+@layer utilities {
+    .absolute_center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .flex-center {
+        display: flex;
+        place-items: center;
+    }
+
+    .circle {
+        border-radius: 50%;
+        aspect-ratio: 1;
+    }
+
+    .hidden {
+        display: none;
+    }
+
 }
