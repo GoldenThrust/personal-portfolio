@@ -1,0 +1,51 @@
+const skillSlide = document.getElementById("skillslide");
+const skillctx = skillSlide.getContext("2d");
+let t = document.querySelector(".tools");
+skillSlide.width = t.clientWidth;
+skillSlide.height = t.clientHeight;
+const skillW = skillSlide.width;
+const skillH = skillSlide.height;
+let skillSlideDepth = skillW * skillH;
+function getpercent(num, percent) {
+    return (percent / 100) * num;
+}
+const skillsImage = [
+    "img/tools/devicon_c.svg",
+    "img/tools/devicon_php.svg",
+    "img/tools/logos_bash.svg",
+    "img/tools/logos_react.svg",
+    "img/tools/logos_python.svg",
+    "img/tools/logos_react.svg",
+    "img/tools/logos_vue.svg",
+]
+
+// background: var(--slight, radial-gradient(50.05% 50.05% at 50% 49.95%, rgba(254, 207, 255, 0.10) 64.58%, rgba(246, 78, 250, 0.03) 100%));
+function drawimage(image, x = 0) {
+    const img = new Image();
+    img.onload = (e) => {
+        const gradient = skillctx.createRadialGradient(x + getpercent(skillH, 25), getpercent(skillH, 50), 0, x + getpercent(skillH, 25), getpercent(skillH, 50), x + getpercent(skillH, 25));
+
+        gradient.addColorStop(0.65, "rgba(254, 207, 255, 0.10)");
+        gradient.addColorStop(1, "rgba(246, 78, 250, 0.03)");
+
+        skillctx.fillStyle = gradient;
+        skillctx.strokeStyle = "#A182AB";
+        skillctx.beginPath();
+        skillctx.arc(x + getpercent(skillH, 25), getpercent(skillH, 50), getpercent(skillH, 35), 0, Math.PI * 2);
+        skillctx.fill();
+        skillctx.stroke();
+        skillctx.drawImage(img, x, getpercent(skillH, 25), getpercent(skillH, 50), getpercent(skillH, 50));
+    }
+    img.src = image;
+}
+let j = 0;
+skillctx.clearRect(0, 0, skillSlide.width, skillSlide.height);
+for (let i = 0; i < 5; i++) {
+    drawimage(skillsImage[i], (getpercent(skillW, 20) * i) + getpercent(skillW, 5));
+}
+j++;
+if (j >= skillsImage.length) {
+    j = 0;
+}
+// background: var(--slight, radial-gradient(50.05% 50.05% at 50% 49.95%, rgba(254, 207, 255, 0.10) 64.58%, rgba(246, 78, 250, 0.03) 100%));
+console.log(skillctx)

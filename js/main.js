@@ -2,7 +2,7 @@
 let initialTouchX = null;
 const nav = document.querySelector(".headerNav")
 // Threshold for swipe detection
-const swipeThreshold = 100;
+const swipeThreshold = 50;
 
 // Function to handle touch start event
 function handleTouchStart(event) {

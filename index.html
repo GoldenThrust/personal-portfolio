@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personnal Portfolio</title>
+    <title>Starfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-    <script src="main.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/canvas.js" defer></script>
 </head>
 
 <body>
+    <aside>
+        <div class="glow"></div>
+    </aside>
     <header>
         <div class="portlogo_container">
             <div class="portlogo">
@@ -71,7 +75,7 @@
             </div>
         </div>
         <div id="about">
-            <h2>ABOUT</h2>
+            <h2>ABOUT ME</h2>
             <div class="frame">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero deserunt minus blanditiis corrupti
                 obcaecati culpa in earum fugit temporibus, quis necessitatibus doloremque voluptas architecto reiciendis
@@ -139,16 +143,122 @@
             </div>
             <div class="toolsandtechnology">
                 <div class="tools">
-                    <div>
-                        <span><img src="img/tools/logos_figma.svg" alt="" srcset=""></span>
-                        <span><img src="img/tools/logos_figma.svg" alt="" srcset=""></span>
-                        <span><img src="img/tools/logos_figma.svg" alt="" srcset=""></span>
-                        <span><img src="img/tools/logos_figma.svg" alt="" srcset=""></span>
-                        <span><img src="img/tools/logos_figma.svg" alt="" srcset=""></span>
-                    </div>
+                    <canvas id="toolslide"></canvas>
                 </div>
                 <div class="glow"></div>
                 <div class="toolsh">Tools and Technology</div>
+            </div>
+        </div>
+        <div id="works">
+            <h2>WORKS</h2>
+            <div class="works">
+                <span>
+                    <video src="video/wordpress.mp4" poster="img/banner/java.jpg"></video>
+                    <div class="workname">LoopSync - Online E-learning</div>
+                </span>
+                <span>
+                    <video src="video/wordpress.mp4" poster="img/banner/maxresdefauhmkklt.jpg"></video>
+                    <div class="workname">Matrix - Graphic design tools</div>
+                </span>
+                <span>
+                    <video src="video/wordpress.mp4" poster="img/banner/maxresdefault.jpg"></video>
+                    <div class="workname">PhotoSniper - Photo Editing app</div>
+                </span>
+                <span>
+                    <video src="video/wordpress.mp4" poster="img/banner/photoshop.jpg"></video>
+                    <div class="workname">Gaser - Animation Library</div>
+                </span>
+                <span>
+                    <video src="video/wordpress.mp4" poster="img/banner/photoshop_2.jpg"></video>
+                    <div class="workname">Batteria - Battery Manager</div>
+                </span>
+                <span>
+                    <video src="video/wordpress.mp4" poster="img/banner/wordpress.jpg"></video>
+                    <div class="workname">Gallery - Photo library</div>
+                </span>
+                <span>
+                    <video src="video/wordpress.mp4" poster="img/banner/java.jpg"></video>
+                    <div class="workname">HolyFIll - Hospital Management System</div>
+                </span>
+                <span>
+                    <video src="video/wordpress.mp4" poster="img/banner/photoshop.jpg"></video>
+                    <div class="workname">Draft - Event planning system</div>
+                </span>
+                <span>
+                    <video src="video/wordpress.mp4" poster="img/banner/maxresdefauhmkklt.jpg"></video>
+                    <div class="workname">Draft - Event planning system</div>
+                </span>
+            </div>
+            <a href="" class="amazed">Be Amazed</a>
+        </div>
+        <div id="services">
+            <h2>Services</h2>
+            <div class="services">
+                <div class="IntroServices frame">
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab porro quo dolores illo facere
+                        delectus
+                        animi ratione ducimus ut culpa error assumenda numquam eos illum harum, neque possimus eum
+                        dolorem!
+                        Corrupti itaque aspernatur dignissimos laborum at cum odio! Velit totam veritatis, natus
+                        corporis
+                        tempore voluptate, fugiat facilis provident debitis quibusdam est in odit aliquam. Molestias
+                        vero
+                        deserunt laborum earum hic?
+                        Vitae quae id quis beatae ratione voluptatum voluptates delectus quisquam. Voluptas iure
+                        incidunt
+                        nemo magni atque quas, corporis fugiat tempora eos dignissimos, ad suscipit voluptatem cumque
+                        saepe
+                        inventore similique veniam.
+                        Eum nemo molestias deserunt, expedita quisquam esse sapiente dolore iusto atque veniam vitae
+                        aperiam
+                        recusandae eaque, porro delectus minima facilis voluptatem nam impedit. Quidem autem, distinctio
+                        libero itaque in reprehenderit.
+                        Dolor aliquam, optio consequatur in sapiente odit, commodi officiis voluptates perferendis
+                        praesentium earum corporis qui dolorem dolorum vero ex, totam asperiores mollitia
+                        necessitatibus?
+                        Dolores, tempore ex atque impedit libero nostrum!
+                    </p>
+                </div>
+                <div class="segment">
+                    <div class="service frame">
+                        <img src="img/tools/Webdevelopment.svg" alt="" class="frameBackground">
+                        <h3>Web Application development</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto modi nihil minima?
+                            Architecto quod eveniet adipisci ipsa, assumenda rem eaque non odit iste ex totam veritatis
+                            reiciendis! Repudiandae, nesciunt soluta!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit
+                        </p>
+                        <img src="img/tools/order.svg" alt="get service" class="placeorder">
+                    </div>
+                    <div class="service frame">
+                        <img src="img/tools/Api_development.svg" alt="" class="frameBackground">
+                        <h3>API Development</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto modi nihil minima?
+                            Architecto quod eveniet adipisci ipsa, assumenda rem eaque non odit iste ex totam veritatis
+                            reiciendis! Repudiandae, nesciunt soluta!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                        <img src="img/tools/order.svg" alt="get service" class="placeorder">
+                    </div>
+                    <div class="service frame">
+                        <img src="img/tools/webgraphics.svg" alt="" class="frameBackground">
+                        <h3>Web Graphics & Game Design</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto modi nihil minima?
+                            Architecto quod eveniet adipisci ipsa, assumenda rem eaque non odit iste ex totam veritatis
+                            reiciendis! Repudiandae, nesciunt soluta!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                        <img src="img/tools/order.svg" alt="get service" class="placeorder" style="cursor: crosshair;">
+                    </div>
+                    <div class="service frame">
+                        <img src="img/tools/quality_assurance.svg" alt="" class="frameBackground">
+                        <h3>Code Quality Assurance</h3>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto modi nihil minima?
+                            Architecto quod eveniet adipisci ipsa, assumenda rem eaque non odit iste ex totam veritatis
+                            reiciendis! Repudiandae, nesciunt soluta!
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                        <img src="img/tools/order.svg" alt="get service" class="placeorder">
+                    </div>
+                </div>
             </div>
         </div>
     </main>
