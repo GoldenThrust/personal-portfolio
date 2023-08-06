@@ -12,13 +12,13 @@ function getpercent(num, percent) {
     return (percent / 100) * num;
 }
 const toolsImage = [
-    "img/tools/devicon_c.svg",
-    "img/tools/devicon_php.svg",
-    "img/tools/logos_bash.svg",
-    "img/tools/logos_figma.svg",
-    "img/tools/logos_python.svg",
-    "img/tools/logos_react.svg",
-    "img/tools/logos_vue.svg",
+    "img/toolsandlanguage/devicon_c.svg",
+    "img/toolsandlanguage/devicon_php.svg",
+    "img/toolsandlanguage/logos_bash.svg",
+    "img/toolsandlanguage/logos_figma.svg",
+    "img/toolsandlanguage/logos_python.svg",
+    "img/toolsandlanguage/logos_react.svg",
+    "img/toolsandlanguage/logos_vue.svg",
 ]
 let toolsCanvas = [];
 class SlidetoolS {
