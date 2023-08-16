@@ -231,7 +231,21 @@ overrides;
             font-weight: bolder;
             height: 100vh;
             background: linear-gradient(180deg, #6c50aa1f 0%, #ff78f20f 100%);
-            transition: left 1s ease-in-out;
+            backdrop-filter: blur(200px);
+            transition: left 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        header .opener {
+            position: absolute;
+            top: 80px;
+            left: -4%;
+            height: 25px;
+            width: 50px;
+            transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        header .opener img {
+            height: 100%;
         }
 
         .resume a {
@@ -275,6 +289,10 @@ overrides;
                 font-size: 1rem;
                 font-weight: 300;
                 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+
+            header .opener {
+                display: none;
             }
         }
 
