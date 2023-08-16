@@ -10,7 +10,6 @@ overrides;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        cursor: url("img/favicon.png") 20px 20px;
     }
 }
 
@@ -54,6 +53,11 @@ overrides;
         font-family: 'Times New Roman', Times, serif;
         color: white;
         scroll-behavior: smooth;
+        cursor: url('img/olajide.jpg'), auto;
+    }
+
+    body:hover {
+        cursor: url('img/olajide.jpg'), auto;
     }
 
     h2 {
@@ -63,6 +67,12 @@ overrides;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        transition: all 0.5s ease-in-out;
+    }
+
+    h2:hover {
+        font-size: 12.5vw;
+        text-shadow: 0 0 10px whitesmoke;
     }
 
     canvas {
@@ -70,7 +80,8 @@ overrides;
         height: 100%;
     }
 
-    #background, #foreground {
+    #background,
+    #foreground {
         position: absolute;
         top: 0;
         left: 0;
@@ -172,6 +183,19 @@ overrides;
             background-color: var(--color);
             transform: translate(var(--x), var(--y));
             border-radius: 50%;
+            animation: dancing_logo 2s linear infinite alternate-reverse forwards;
+        }
+
+        @keyframes dancing_logo {
+            from  {
+                box-shadow: 0 0 15px var(--color);
+                transform: translate(calc(var(--x) - 1), calc(var(--y)));
+            }
+
+            to {
+                box-shadow: 2px 2px 10px var(--color);
+                transform: translate(calc(var(--x)), calc(var(--y)));
+            }
         }
 
         .portname {
@@ -219,8 +243,16 @@ overrides;
             margin-right: 10px;
             aspect-ratio: 3/1;
             color: white;
-            font-family: Inter, sans-serif;
+            font-family: "Twinkle Star", sans-serif;
             box-shadow: 1px 2px 10px #ff91e717;
+            transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .resume a:hover {
+            perspective-origin: bottom;
+            transform: rotateX(30deg);
+            background:  #dd00ff88;
+            box-shadow: 0rgba(221, 0, 255, 0.429) #ff02af;
         }
 
         @media screen and (min-width: 768px) {
@@ -300,26 +332,30 @@ overrides;
             .myName {
                 color: #FF00D6;
                 text-shadow: 4px 5px 10px #f58eca55;
-                font-family: Inria Serif;
+                font-family: "Inria Serif";
                 font-size: 13vw;
                 font-weight: 400;
             }
 
             .specialization {
-                display: flex;
-                justify-content: space-between;
                 font-family: 'Courier New', Courier, monospace;
                 font-size: x-large;
                 color: #737F97;
                 text-shadow: 2px 2px 10px #dedede4d;
                 margin: 20px 0;
+                height: 50px;
             }
 
             .introbrief {
                 color: #9D9D9D;
-                text-align: center;
+                text-align: justify;
                 font-weight: 700;
                 line-height: 158.523%;
+            }
+
+            .introbrief::first-letter {
+                color: rgb(184, 13, 153);
+                font-size: xx-large;
             }
 
 
@@ -348,14 +384,6 @@ overrides;
                 .introbrief {
                     grid-column-start: 3;
                     font-size: 1.3vw;
-                }
-
-                .specialization {
-                    flex-direction: column;
-                }
-
-                .specialization span {
-                    margin-bottom: 20px;
                 }
 
                 .introbrief {
@@ -403,7 +431,7 @@ overrides;
 
             .expertise h3 {
                 text-shadow: 2px 4px 4px 0px #a059c140;
-                font-family: "Grechen Fuemen", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-family: "Grechen Fuemen", cursive, 'Times New Roman', serif;
                 font-size: 3rem;
                 margin-bottom: 20px;
                 background: linear-gradient(180deg, #ffffff08 0%, #9D9D9D 100%);
@@ -414,7 +442,6 @@ overrides;
 
             .expertiseInfo .pro {
                 color: #FFF;
-                font-family: "JejuMyeongjo", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
                 font-size: xx-large;
             }
 
@@ -466,20 +493,6 @@ overrides;
                 height: 100%;
             }
 
-            .toolsandtechnology .toolsh {
-                position: absolute;
-                top: 0;
-                right: -3vw;
-                transform: rotate(90deg);
-                text-align: center;
-                font-size: calc(1.2vw + 1.2vh);
-                font-weight: 700;
-                background: conic-gradient(from 270deg at 50% 50%, #EBEBEB 0deg, #b9b3b31e 90deg);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-
             .toolsandtechnology .glow {
                 position: absolute;
                 top: 50%;
@@ -519,6 +532,11 @@ overrides;
 
             #works .works span video {
                 cursor: pointer;
+                transition: all 0.5s ease-in-out;
+            }
+
+            #works .works span video:hover {
+                transform: rotate(5deg);
             }
 
             #works .works .workname {
@@ -615,14 +633,16 @@ overrides;
                 border: 1px solid rgba(204, 142, 214, 0.45);
                 background: linear-gradient(180deg, rgba(107, 51, 109, 0.12) 0%, rgba(68, 68, 68, 0.31) 100%);
                 overflow: hidden;
-            }
-
-            #blog .blogs .blog {
                 color: #FFF;
                 text-align: justify;
                 font-weight: 500;
-                font-family: "Stalinist One", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 padding-bottom: 50px;
+            }
+
+            #blog .blogs .blog:hover {
+                border: 1px solid #ff02ff;
+                box-shadow: 0 0 10px #ff02af;
             }
 
             #blog .blogs .blog .title,
@@ -750,7 +770,7 @@ overrides;
             }
         }
     }
-    
+
     @layer footer {
         footer {
             text-align: center;
@@ -795,6 +815,11 @@ overrides;
         line-height: 2rem;
     }
 
+    .frame:hover {
+        border: 1px solid #ff02ff;
+        box-shadow: 0 0 10px #ff02af;
+    }
+
     .frameBackground {
         position: absolute;
         top: 50%;
@@ -802,6 +827,10 @@ overrides;
         transform: translate(-50%, -50%);
         width: 30%;
         opacity: 0.4;
+    }
+
+    .frame:hover .frameBackground {
+        opacity: 1;
     }
 
     .glow {

@@ -48,3 +48,35 @@ function closeMenu() {
 // Add event listeners for touch events
 document.addEventListener('touchstart', handleTouchStart);
 document.addEventListener('touchend', handleTouchEnd);
+
+const professions = ["Full-Stack Web Developer", "Full-Stack Software Engineer"];
+const specialization = document.querySelector(".specialization");
+let currentTextIndex = 0;
+let currentText = professions[currentTextIndex];
+let isErasing = false;
+let typingDelay = 100;
+let eraseDelay = 50;
+
+function typeText() {
+  if (isErasing) {
+    currentText = currentText.substring(0, currentText.length - 1);
+  } else {
+    currentText = professions[currentTextIndex].substring(0, currentText.length + 1);
+  }
+
+  specialization.textContent = currentText;
+
+  if (currentText === professions[currentTextIndex] && !isErasing) {
+    isErasing = true;
+    typingDelay = 1000;
+  } else if (currentText === "" && isErasing) {
+    isErasing = false;
+    typingDelay = 100;
+    currentTextIndex = (currentTextIndex + 1) % professions.length;
+  }
+
+  const delay = isErasing ? eraseDelay : typingDelay;
+  setTimeout(typeText, delay);
+}
+
+typeText();
