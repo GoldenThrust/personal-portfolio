@@ -187,7 +187,7 @@ overrides;
         }
 
         @keyframes dancing_logo {
-            from  {
+            from {
                 box-shadow: 0 0 15px var(--color);
                 transform: translate(calc(var(--x) - 1), calc(var(--y)));
             }
@@ -265,7 +265,7 @@ overrides;
         .resume a:hover {
             perspective-origin: bottom;
             transform: rotateX(30deg);
-            background:  #dd00ff88;
+            background: #dd00ff88;
             box-shadow: 0rgba(221, 0, 255, 0.429) #ff02af;
         }
 
@@ -843,7 +843,7 @@ overrides;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 30%;
+        width: calc(25% + 2vh);
         opacity: 0.4;
     }
 
@@ -896,7 +896,6 @@ overrides;
     header {
         z-index: 1 !important;
     }
-
 
     #services .IntroServices.frame,
     #services .segment p {

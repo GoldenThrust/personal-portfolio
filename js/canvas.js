@@ -2,7 +2,6 @@ const toolSlide = document.getElementById("toolslide");
 const toolctx = toolSlide.getContext("2d");
 let tools = document.querySelector(".tools");
 toolctx.imageSmoothingQuality = "high";
-console.log(toolctx)
 toolSlide.width = tools.clientWidth;
 toolSlide.height = tools.clientHeight;
 const toolW = toolSlide.width;
