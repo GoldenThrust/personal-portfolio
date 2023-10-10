@@ -2,8 +2,8 @@ const toolSlide = document.getElementById("toolslide");
 const toolctx = toolSlide.getContext("2d");
 let tools = document.querySelector(".tools");
 toolctx.imageSmoothingQuality = "high";
-toolSlide.width = tools.clientWidth;
-toolSlide.height = tools.clientHeight;
+toolSlide.width = tools.clientWidth * devicePixelRatio;
+toolSlide.height = tools.clientHeight * devicePixelRatio;
 const toolW = toolSlide.width;
 const toolH = toolSlide.height;
 let toolSlideDepth = toolW * toolH;
@@ -31,6 +31,7 @@ class SlidetoolS {
         this.imagesize = getpercent(toolH, 50);
         this.size = getpercent(toolH, 35);
     }
+
     drawImage() {
         if (this.inter == 0 || this.inter == 4) {
             this.px = this.x + this.y/2;

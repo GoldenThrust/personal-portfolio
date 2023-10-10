@@ -20,7 +20,7 @@ let NavBar = () => {
 }
 
 let Profession = () => {
-    const professions = ["Full-Stack Web Developer", "Software Engineer"];
+    const professions = ["Full-Stack Web Developer", "Software Engineer", "Data Scientist"];
     const specialization = document.querySelector(".specialization");
     let currentTextIndex = 0;
     let currentText = professions[currentTextIndex];
@@ -53,5 +53,19 @@ let Profession = () => {
     typeText();
 }
 
+let IntroVId = () => {
+    let vid = document.querySelectorAll("video");
+    vid.forEach((video)=> {
+        video.addEventListener("mouseover", ()=> {
+            video.play();
+        });
+        video.addEventListener("mouseout", ()=> {
+            video.pause();
+        });
+    })
+};
+
 NavBar();
 Profession();
+IntroVId();
+document.querySelector(".buttom").clicked();

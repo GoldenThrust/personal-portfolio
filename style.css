@@ -231,7 +231,6 @@ overrides;
             font-weight: bolder;
             height: 100vh;
             background: linear-gradient(180deg, #6c50aa1f 0%, #ff78f20f 100%);
-            backdrop-filter: blur(200px);
             transition: left 1s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
 
@@ -571,6 +570,17 @@ overrides;
                 #works .works {
                     grid-template-columns: repeat(auto-fit, 95%);
                 }
+            }
+
+            #workpopup {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 90%;
+                height: 90%;
+                background-color: var(--background);
+
             }
         }
 

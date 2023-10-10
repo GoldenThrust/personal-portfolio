@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quadratic Curve Animation</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="400" height="400"></canvas>
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const context = canvas.getContext("2d");
+
+    const startPoint = { x: 50, y: 200 };
+    const controlPoint = { x: 200, y: 50 };
+    const endPoint = { x: 350, y: 200 };
+    
+    let t = 0; // parameter for interpolation
+    const speed = 0.005; // adjust this value to control animation speed
+    
+    function animate() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Draw the quadratic curve
+      context.beginPath();
+      context.moveTo(startPoint.x, startPoint.y);
+      context.quadraticCurveTo(controlPoint.x, controlPoint.y, endPoint.x, endPoint.y);
+      context.stroke();
+      
+      // Calculate current position of the circle
+      const circleX = (1 - t) * (1 - t) * startPoint.x + 2 * (1 - t) * t * controlPoint.x + t * t * endPoint.x;
+      const circleY = (1 - t) * (1 - t) * startPoint.y + 2 * (1 - t) * t * controlPoint.y + t * t * endPoint.y;
+      
+      // Draw the circle
+      context.beginPath();
+      context.arc(circleX, circleY, 10, 0, Math.PI * 2);
+      context.fillStyle = "blue";
+      context.fill();
+      
+      t += speed;
+      if (t <= 1) {
+        requestAnimationFrame(animate);
+      }
+    }
+    
+    animate();
+  </script>
+</body>
+</html>
